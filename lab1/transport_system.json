@@ -1,0 +1,73 @@
+{
+  "company": {
+    "id": 1,
+    "name": "Городской транспорт",
+    "address": "ул. Центральная, 1",
+    "transports": [
+      {
+        "id": 1,
+        "model": "Mercedes Citaro",
+        "capacity": 50,
+        "speed": 60.0,
+        "status": "running",
+        "type": "bus",
+        "route_number": "101"
+      },
+      {
+        "id": 2,
+        "model": "Tatra T3",
+        "capacity": 80,
+        "speed": 40.0,
+        "status": "stopped",
+        "type": "tram",
+        "line_number": "3"
+      }
+    ],
+    "drivers": [
+      {
+        "id": 1,
+        "name": "Иванов Иван",
+        "license_number": "AB123456",
+        "assigned_trips": [
+          1
+        ]
+      }
+    ]
+  },
+  "routes": [
+    {
+      "id": 1,
+      "number": "101",
+      "length_km": 15.5,
+      "stops": [
+        "Центральный вокзал",
+        "Университет",
+        "Стадион"
+      ]
+    }
+  ],
+  "trips": [
+    {
+      "id": 1,
+      "date": "2024-01-15",
+      "departure_time": "2024-01-15T08:00:00",
+      "arrival_time": "2024-01-15T08:45:00",
+      "status": "in_progress"
+    }
+  ],
+  "passengers": [
+    {
+      "id": 1,
+      "full_name": "Сидоров Алексей",
+      "phone": "+79991234567",
+      "tickets": [
+        {
+          "id": 1,
+          "price": 45.5,
+          "issue_date": "2024-01-15",
+          "status": "active"
+        }
+      ]
+    }
+  ]
+}
