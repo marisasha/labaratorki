@@ -76,6 +76,7 @@ class Tram(Transport):
             raise ValueError("Вместимость трамвая должна быть положительной")
         if not model:
             raise ValueError("Модель трамвая не может быть пустой")
+        super().__init__(id, model, capacity, speed)
         self.line_number = line_number
     
     def show_type(self) -> str:
