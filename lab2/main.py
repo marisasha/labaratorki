@@ -38,7 +38,9 @@ if __name__ == "__main__":
 
     # =-=-Поиск телефонов по файлу-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     
+
     print("\nПоиск по файлу\n")
+    
 
     with open("phone.txt","r") as file:
         file_phones = extractor.extract_phone_numbers(file.read())
