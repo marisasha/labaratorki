@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     url = "https://moscow.shop.megafon.ru/connect/chnumber/fullnumber"
     
-    print(f"Поиск по странице: {url}")
+    print(f"\nПоиск по странице: {url}\n")
 
     phones = extractor.get_phones_from_url(url)
     if phones:
@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # =-=-Поиск телефонов по тексту-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-    print("\n\Поиск по тексту тексту:\n")
+    print("\nПоиск по тексту:\n")
 
     test_text = """
     Контактные номера:
