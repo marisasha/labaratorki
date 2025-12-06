@@ -71,7 +71,7 @@ class GuessGame(tk.Tk):
                              highlightthickness=0, relief="flat")
         
         self.frame.place(relx=0.5, rely=0.5, anchor="center", 
-                        width=660, height=340)  # Увеличили ширину
+                        width=660, height=340)
         
         self.shadow_frame = tk.Frame(self.main_container, bg="#333333", bd=0)
         self.shadow_frame.place(relx=0.5, rely=0.5, anchor="center", 
@@ -92,7 +92,6 @@ class GuessGame(tk.Tk):
         except:
             pass
             
-        # Шрифты
         self.custom_font_big = font.Font(family="Helvetica", size=20, weight="bold")
         self.custom_font_med = font.Font(family="Helvetica", size=12)
         self.custom_font_small = font.Font(family="Helvetica", size=10)
@@ -151,7 +150,7 @@ class GuessGame(tk.Tk):
         heading.pack(pady=(0, 4))
 
         sub = tk.Label(left_column,
-                       text=f"Я загадал число от {MIN_VAL} до {MAX_VAL}. Сколько попыток понадобится тебе?",
+                       text=f"Я загадал число от {MIN_VAL} до {MAX_VAL}.Попробуй отгадать.",
                        font=self.custom_font_med, bg="white", fg="#2b3b4a", 
                        wraplength=300, justify="center")
         sub.pack(pady=(0, 12))
@@ -233,7 +232,6 @@ class GuessGame(tk.Tk):
                     bg="white", fg="#6b7280",
                     justify="center").pack(expand=True)
         else:
-            # Отображаем рекорды
             for i, score in enumerate(scores, 1):
                 color = "#0b2545"
                 if i == 1:
@@ -267,26 +265,20 @@ class GuessGame(tk.Tk):
             self._set_hint(f"Число должно быть в диапазоне {MIN_VAL}–{MAX_VAL}.", "red")
             return
 
-        # Проверка
         self.attempts += 1
         self.attempts_label.config(text=f"Попыток: {self.attempts}")
 
         if g == self.secret:
             self._set_hint(f"Ура! Вы угадали число {self.secret} за {self.attempts} попыток 🎉", "green")
             self._celebrate()
-            # Сохраняем результат
             top_scores = add_score(self.attempts)
-            # Обновляем отображение рекордов
             self.update_scores_display()
-            # Деактивируем игру
             self.deactivate_game()
             return
         elif g < self.secret:
             self._set_hint("Больше ↑", "blue")
         else:
             self._set_hint("Меньше ↓", "blue")
-
-        # Маленькая подсказка по близости
         diff = abs(self.secret - g)
         if diff <= 1 and g != self.secret:
             self._set_hint("Очень близко! 🔥", "darkorange")
