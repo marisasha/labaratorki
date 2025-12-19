@@ -10,5 +10,7 @@ router = Router()
 async def command_start_handler(message: Message) -> None:
     await message.answer(
         f"Привет, {html.bold(message.from_user.full_name)}!\n"
-        "Чтобы узнать погоду /weather "
+        "Чтобы узнать погоду - /weather\n"
+        "Чтобы узнать влажность - /humidity\n"
+        "Чтобы узнать ветер - /wind\n"
     )

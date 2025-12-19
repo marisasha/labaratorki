@@ -2,12 +2,13 @@ import asyncio
 import logging
 import sys
 from os import getenv
-
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
-
 from handlers import all_routers
+
+load_dotenv()
 
 TOKEN = getenv("BOT_TOKEN")
 dp = Dispatcher()
